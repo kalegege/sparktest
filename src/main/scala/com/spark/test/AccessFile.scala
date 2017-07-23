@@ -29,9 +29,10 @@ object AccessFile {
     val url = "access_cache_cache-10.101.192.21_20170720.log"
     val url1 = "c.txt"
     val url2 = "AccessLog_TVB_IPS01_20170401.log"
+    val url3="c.txt"
 
-    sc.textFile(head2+ url)
-      .map(p => new String(p.getBytes("utf-8"), "gbk"))
+    sc.textFile(head2+ url3)
+//      .map(p => new String(p.getBytes,0,p.length ,"utf-8"))
 //      .flatMap(s => s.split("\\|"))
 //      .map(x => (x, 1))
 //      .reduceByKey(_ + _)
