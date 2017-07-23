@@ -24,12 +24,14 @@ object AccessFile {
 
     //textFile 默认只支持Utf-8格式,这种方法都到的是乱码
     // 这里用的是文件夹路径，也可以指定到具体文件
+    val head1="/Users/kale/test/"
+    val head2="e:\\test\\"
     val url = "access_cache_cache-10.101.192.21_20170720.log"
     val url1 = "c.txt"
     val url2 = "AccessLog_TVB_IPS01_20170401.log"
 
-    sc.textFile("/Users/kale/test/" + url)
-      .map(p => new String(p.getBytes, "gbk"))
+    sc.textFile(head2+ url)
+      .map(p => new String(p.getBytes("utf-8"), "gbk"))
 //      .flatMap(s => s.split("\\|"))
 //      .map(x => (x, 1))
 //      .reduceByKey(_ + _)
